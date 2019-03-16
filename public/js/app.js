@@ -10,13 +10,13 @@ weatherFormm.addEventListener('submit', (e) => {
 	messageOne.textContent = 'Loading...';
 	messageTwo.textContent = '';
 
-	fetch(`http://localhost:3000/weather?address=${location}`).then((response) => {
+	fetch(`/weather?address=${location}`).then((response) => {
 		response.json().then((data) => {
 			if (data.error) {
 				messageOne.textContent = data.error;
 			} else {
 				messageOne.textContent = data.location;
-				messageTwo.textContent = `${data.forecast.prognoza}\nTemperatura: ${data.forecast.temperatura}°C`;
+				messageTwo.textContent = `${data.forecast.summary}\nTemperature: ${data.forecast.temperature}°C`;
 			}
 		});
 	});

@@ -20,25 +20,25 @@ hbs.registerPartials(partialsPath);
 //setup static directory to serve
 app.use(express.static(publicDirectoryPath));
 
-app.get('/', (req, res) => {
+app.get('', (req, res) => {
 	res.render('index', {
 		title: 'Weather App',
-		name: 'Mislav Matijević'
+		name: 'Mislav Matijevic'
 	});
 });
 
 app.get('/about', (req, res) => {
 	res.render('about', {
 		title: 'About me',
-		name: 'Mislav Matijević'
+		name: 'Mislav Matijevic'
 	});
 });
 
 app.get('/help', (req, res) => {
 	res.render('help', {
-		helpMessage: 'Help me please!',
+		helpText: 'Help me please!',
 		title: 'Help',
-		name: 'Mislav Matijević'
+		name: 'Mislav Matijevic'
 	});
 });
 
@@ -76,17 +76,17 @@ app.get('/products', (req, res) => {
 
 app.get('/help/*', (req, res) => {
 	res.render('404', {
-		message: 'Help article not found!',
+		errorMessage: 'Help article not found!',
 		title: '404',
-		name: 'Mislav Matijević'
+		name: 'Mislav Matijevic'
 	});
 });
 
 app.get('*', (req, res) => {
 	res.render('404', {
-		message: 'Page not found!',
+		errorMessage: 'Page not found!',
 		title: '404',
-		name: 'Mislav Matijević'
+		name: 'Mislav Matijevic'
 	});
 });
 
